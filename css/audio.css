@@ -3,7 +3,7 @@ body {
 }
 
 #import {
-	position: absolute;
+	position: relative;
 	margin-top: 1 em;
 	margin-bottom: 1 em;
 	margin-left: 1 em;
