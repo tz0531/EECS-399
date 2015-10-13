@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/audio.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,11 +27,8 @@
   </head>
   
   <body>
-    <div style="height:0px;overflow:hidden">
-		<input type="file" id="audio" onchange="playFile(this);" />
-	</div>
-	<button type="button" onclick="playFile(this);">Import Audio</button>
-	<div></div>
+    <h3 id="import">Import Audio</h3>
+	<input type="file" id="audio" onchange="playFile(this)" />
 	<audio id="sound" controls></audio>
     
   </body>
