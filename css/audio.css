@@ -10,12 +10,12 @@ body {
 }
 
 #audio {
-	position: absolute;
+	position: relative;
 	margin-bottom: 1 em;
 	margin-left: 1 em;
 }
 
 #sound {
-	position: absolute;
+	position: relative;
 	margin-left: 1 em;
 }
