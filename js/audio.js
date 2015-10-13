@@ -3,7 +3,7 @@ function chooseFile() {
 }
 
 function playFile(obj) {
-  var sound = document.getElementById('sound');
+  var sound = document.getElementById('sound').click();
   var reader = new FileReader();
   reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(sound);
   reader.addEventListener('load', function() {
