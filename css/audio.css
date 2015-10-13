@@ -1,4 +1,14 @@
 #import {
 	margin-top: 1 em;
 	margin-bottom: 1 em;
+	margin-left: 1 em;
+}
+
+#audio {
+	margin-bottom: 1 em;
+	margin-left: 1 em;
+}
+
+#sound {
+	margin-left: 1 em;
 }
