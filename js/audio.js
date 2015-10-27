@@ -1,38 +1,44 @@
-var context = new AudioContext();
-var media = document.getElementById('player');
-var source = context.createMediaElementSource(media);
+var context, media, source;
+var Q, bandSplit;
+var hBand, hInvert, mBand, lBand, lInvert;
+var lComp, mComp, hComp;
+var wet, dry;
+var linear, linearInv;
+var compressor, range;
+var dbToGain;
+var lowMeter, midMeter, highMeter;
+var showReduction;
 
-function playFile(obj) {  
-	var reader = new FileReader();
-	reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(media);
-	reader.addEventListener('load', function() {
-    document.getElementById("player").play()
-	});
-	reader.readAsDataURL(obj.files[0]);
-}  
+window.addEventListener('load', init, false);
+function init() {
+
+context = new AudioContext();
+media = document.getElementById('player');
+source = context.createMediaElementSource(media);
+
 
 // EQ Properties
 //
-var Q = 1.0;
-var bandSplit = [120, 2000];
+Q = 1.0;
+bandSplit = [120, 2000];
 
 // the high frequencies
-var hBand = context.createBiquadFilter();
+hBand = context.createBiquadFilter();
 hBand.type = "highpass";
 hBand.frequency.value = bandSplit[1];
 hBand.Q.value = Q;
-var hInvert = context.createGain();
+hInvert = context.createGain();
 hInvert.gain.value = -1.0;
 
 // the medium frequencies
-var mBand = context.createGain();
+mBand = context.createGain();
 
 // the low frequencies
-var lBand = context.createBiquadFilter();
+lBand = context.createBiquadFilter();
 lBand.type = "lowpass";
 lBand.frequency.value = bandSplit[0];
 lBand.Q.value = Q;
-var lInvert = context.createGain();
+lInvert = context.createGain();
 lInvert.gain.value = -1.0;
 
 // feed the bands
@@ -49,9 +55,9 @@ hInvert.connect(mBand);
 lInvert.connect(mBand);
 
 // three compressors
-var lComp = context.createDynamicsCompressor();
-var mComp = context.createDynamicsCompressor();
-var hComp = context.createDynamicsCompressor();
+lComp = context.createDynamicsCompressor();
+mComp = context.createDynamicsCompressor();
+hComp = context.createDynamicsCompressor();
 
 // connect them to the compressors
 lBand.connect(lComp);
@@ -59,14 +65,14 @@ mBand.connect(mComp);
 hBand.connect(hComp);
 
 // wet signal is the sum of all compressors
-var wet = context.createGain();
+wet = context.createGain();
 wet.gain.value = 1.0;
 lComp.connect(wet);
 mComp.connect(wet);
 hComp.connect(wet);
 
 // preserve dry
-var dry = context.createGain();
+dry = context.createGain();
 dry.gain.value = 0.0;
 source.connect(dry);
 
@@ -76,12 +82,44 @@ dry.connect(context.destination);
 
 // Mapping
 //
-var linear = function(min, max, value) {
+linear = function(min, max, value) {
   return min + value * (max - min);
 }
 
-var linearInv = function(min, max, value) {
+linearInv = function(min, max, value) {
   return (value - min) / (max - min);
+}
+
+
+
+compressor = {
+  threshold: [-100, 0],
+  knee: [0, 40],
+  ratio: [1, 20],
+  attack: [0, 1],
+  release: [0, 1]
+}
+
+for (var name in compressor) {
+  range = compressor[name];
+  document.getElementById("low-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
+  document.getElementById("mid-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
+  document.getElementById("high-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
+}
+
+dbToGain = function(db) {
+  return Math.exp(db * Math.log(10.0) / 20.0);
+}
+lowMeter = document.getElementById("low-reduction");
+midMeter = document.getElementById("mid-reduction");
+highMeter = document.getElementById("high-reduction");
+showReduction = (function() {
+  lowMeter.value = dbToGain(lComp.reduction.value) * 100.0;
+  midMeter.value = dbToGain(mComp.reduction.value) * 100.0;
+  highMeter.value = dbToGain(hComp.reduction.value) * 100.0;
+  window.requestAnimationFrame(arguments.callee);
+})();
+
 }
 
 // Input
@@ -93,21 +131,6 @@ function changeBoolean(value, type) {
       wet.gain.value = value ? 1.0 : 0.0;
       break;
   }
-}
-
-var compressor = {
-  threshold: [-100, 0],
-  knee: [0, 40],
-  ratio: [1, 20],
-  attack: [0, 1],
-  release: [0, 1]
-}
-
-for (var name in compressor) {
-  var range = compressor[name];
-  document.getElementById("low-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
-  document.getElementById("mid-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
-  document.getElementById("high-" + name).value = linearInv(range[0], range[1], lComp[name].value) * 100.0;
 }
 
 function changePercent(string, type) {
@@ -162,15 +185,12 @@ function changePercent(string, type) {
       break;
   }
 }
-var dbToGain = function(db) {
-  return Math.exp(db * Math.log(10.0) / 20.0);
-}
-var lowMeter = document.getElementById("low-reduction");
-var midMeter = document.getElementById("mid-reduction");
-var highMeter = document.getElementById("high-reduction");
-var showReduction = (function() {
-  lowMeter.value = dbToGain(lComp.reduction.value) * 100.0;
-  midMeter.value = dbToGain(mComp.reduction.value) * 100.0;
-  highMeter.value = dbToGain(hComp.reduction.value) * 100.0;
-  window.requestAnimationFrame(arguments.callee);
-})();
+
+function playFile(obj) {  
+	var reader = new FileReader();
+	reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(media);
+	reader.addEventListener('load', function() {
+    document.getElementById('player').play()
+	});
+	reader.readAsDataURL(obj.files[0]);
+}  
