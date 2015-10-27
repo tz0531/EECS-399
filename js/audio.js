@@ -1,13 +1,13 @@
 var context = new AudioContext();
 var media = document.getElementById('player');
 var source = context.createMediaElementSource(media);
-var reader = new FileReader();
-reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(player);
-reader.addEventListener('load', function() {
-    document.getElementById("player").play()
-});
 
 function playFile(obj) {  
+	var reader = new FileReader();
+	reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(media);
+	reader.addEventListener('load', function() {
+    document.getElementById("player").play()
+	});
 	reader.readAsDataURL(obj.files[0]);
 }  
 
