@@ -2,8 +2,9 @@ html, body {
   font-size: 12px;
   font-family: "Open Sans";
   background: #EEE;
-  position: relative;
-  right: 3 em;
+  position: absolute;
+  top: 3 em;
+  left: 3 em;
 }
 
 a {

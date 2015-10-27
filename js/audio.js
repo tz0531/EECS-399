@@ -2,9 +2,9 @@ var context = new AudioContext();
 var media = document.getElementById('player');
 var source = context.createMediaElementSource(media);
 var reader = new FileReader();
-reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(media);
+reader.onload = (function(audio) {return function(e) {audio.src = e.target.result;};})(player);
 reader.addEventListener('load', function() {
-    document.getElementById("media").play()
+    document.getElementById("player").play()
 });
 
 function playFile(obj) {  
