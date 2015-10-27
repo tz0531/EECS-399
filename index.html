@@ -27,12 +27,97 @@
 	
   </head>
   
-  <body>
-    <h3 id="import">Import Audio</h3>
-	<br>
-	<input type="file" id="audio" onchange="playFile(this)" />
-	<br>
-	<audio id="sound" controls></audio>
+  <body>  
     
+	<div class="controls">
+  <label>Enabled</label>
+  <input type="checkbox" checked onchange="changeBoolean(this.checked , 'drywet');"></input>
+</div>
+<div class="row">
+  <h3>Low Bands</h3>
+  <div class="controls">
+    <label>Threshold</label>
+    <input type="range" id="low-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Knee</label>
+  <input type="range" id="low-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Ratio</label>
+  <input type="range" id="low-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Attack</label>
+  <input type="range" id="low-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Release</label>
+  <input type="range" id="low-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Reduction</label>
+  <meter id="low-reduction" value="100" min="0" max="100"></meter>
+</div>
+</div>
+<div class="row">
+  <h3>Medium Bands</h3>
+  <div class="controls">
+    <label>Threshold</label>
+    <input type="range" id="mid-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Knee</label>
+  <input type="range" id="mid-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Ratio</label>
+  <input type="range" id="mid-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Attack</label>
+  <input type="range" id="mid-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Release</label>
+  <input type="range" id="mid-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Reduction</label>
+  <meter id="mid-reduction" value="100" min="0" max="100"></meter>
+</div>
+</div>
+<div class="row">
+  <h3>High Bands</h3>
+  <div class="controls">
+    <label>Threshold</label>
+    <input type="range" id="high-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Knee</label>
+  <input type="range" id="high-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Ratio</label>
+  <input type="range" id="high-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Attack</label>
+  <input type="range" id="high-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Release</label>
+  <input type="range" id="high-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+</div>
+<div class="controls">
+  <label>Reduction</label>
+  <meter id="high-reduction" value="100" min="0" max="100"></meter>
+</div>
+</div>
+<div class="player">
+  <audio id="player" crossorigin controls>
+    <input type="file" id="audio" onchange="playFile(this)" />
+  </audio>
+</div>
   </body>
 </html>
