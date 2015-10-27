@@ -2,8 +2,7 @@ html, body {
   font-size: 12px;
   font-family: "Open Sans";
   background: #EEE;
-  top: 3 em;
-  left: 3 em;
+  margin: 10%;
 }
 
 a {
