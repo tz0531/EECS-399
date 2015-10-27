@@ -14,6 +14,7 @@ function init() {
 
 context = new AudioContext();
 media = document.getElementById('player');
+media.crossOrigin = 'anonymous';
 source = context.createMediaElementSource(media);
 
 
