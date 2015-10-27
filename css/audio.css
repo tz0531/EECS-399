@@ -1,25 +1,9 @@
-#import {
-	position: relative;
-	margin-top: 1 em;
-	margin-bottom: 1 em;
-	margin-left: 1 em;
-}
-
-#audio {
-	position: relative;
-	margin-bottom: 1 em;
-	margin-left: 1 em;
-}
-
-#sound {
-	position: relative;
-	margin-left: 1 em;
-}
-
 html, body {
   font-size: 12px;
   font-family: "Open Sans";
   background: #EEE;
+  position: relative;
+  right: 3 em;
 }
 
 a {
@@ -49,7 +33,7 @@ div.controls label {
 }
 
 div.controls label, div.controls input, div.controls meter {
-    vertical-align: middle;
+    vertical-align: Left;
     padding: 0;
     margin: 0;
 }
