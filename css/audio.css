@@ -12,9 +12,9 @@ a {
 }
 
 div.row {
-  display: inline-block;
+  display: inline;
   float: left;
-  width: 80%;
+  width: 20%;
   margin-bottom: 2%;
 }
 
@@ -27,7 +27,7 @@ audio {
 }
 
 div.controls label {
-  display: inline;
+  display: inline-table;
   text-align: right;
   width: 80px;
 }
