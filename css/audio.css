@@ -13,8 +13,10 @@ a {
 
 div.row {
   display: inline;
-  width: 30%;
+  float: left;
+  width: 25%;
   margin-bottom: 2%;
+  margin-right: 5%
 }
 
 div.player {
@@ -26,12 +28,12 @@ audio {
 }
 
 div.controls label {
-  display: inline;
   text-align: right;
   width: 80px;
 }
 
 div.controls label, div.controls input, div.controls meter {
+    display: inline-block;
     padding: 0;
     margin: 0;
 }
