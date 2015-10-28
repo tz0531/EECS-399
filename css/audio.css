@@ -2,7 +2,8 @@ html, body {
   font-size: 12px;
   font-family: "Open Sans";
   background: #EEE;
-  margin: 10%;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
 a {
@@ -13,8 +14,8 @@ a {
 div.row {
   display: inline;
   float: left;
-  width: 256px;
-  margin-bottom: 16px;
+  width: 80%;
+  margin-bottom: 2%;
 }
 
 div.player {
@@ -26,7 +27,7 @@ audio {
 }
 
 div.controls label {
-  display: inline-block;
+  display: inline;
   text-align: right;
   width: 80px;
 }
