@@ -91,8 +91,9 @@
 <div class="row">
   <h3 id="highBands"></h3>
   <div class="controls">
-    <label id="hthreshold"></label><label>Threshold</label>
-    <input type="range" id="high-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+    <label>Threshold</label>
+    <input type="range" id="high-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
+	<input type="text" id="hthreshold" value="">
 </div>
 <div class="controls">
   <label id="hknee"></label><label>Knee</label>

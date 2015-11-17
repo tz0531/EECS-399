@@ -198,18 +198,52 @@ function playFile(obj) {
 	reader.readAsDataURL(obj.files[0]);
 }  
 
-document.getElementById("lthreshold").innerHTML = lComp.threshold.value + " dB";
-document.getElementById("lknee").innerHTML = lComp.knee.value + " dB";
-document.getElementById("lratio").innerHTML = lComp.ratio.value;
-document.getElementById("lattack").innerHTML = lComp.attack.value + " sec";
-document.getElementById("lrelease").innerHTML = lComp.release.value + " sec";
-document.getElementById("mthreshold").innerHTML = mComp.threshold.value + " dB";
-document.getElementById("mknee").innerHTML = mComp.knee.value + " dB";
-document.getElementById("mratio").innerHTML = mComp.ratio.value;
-document.getElementById("mattack").innerHTML = mComp.attack.value + " sec";
-document.getElementById("mrelease").innerHTML = mComp.release.value + " sec";
-document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
-document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
-document.getElementById("hratio").innerHTML = hComp.ratio.value;
-document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
-document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
+function updateValue(id) {
+	switch(id){
+		case "lthreshold":
+			document.getElementById("lthreshold").innerHTML = lComp.threshold.value + " dB";
+			break;
+		case "lknee":
+			document.getElementById("lknee").innerHTML = lComp.knee.value + " dB";
+			break;
+		case "lratio":
+			document.getElementById("lratio").innerHTML = lComp.ratio.value;
+			break;
+		case "lattack":
+			document.getElementById("lattack").innerHTML = lComp.attack.value + " sec";
+			break;
+		case "lrelease":
+			document.getElementById("lrelease").innerHTML = lComp.release.value + " sec";
+			break;
+		case "mthreshold":
+			document.getElementById("mthreshold").innerHTML = mComp.threshold.value + " dB";
+			break;
+		case "mknee":
+			document.getElementById("mknee").innerHTML = mComp.knee.value + " dB";
+			break;
+		case "mratio":
+			document.getElementById("mratio").innerHTML = mComp.ratio.value;
+			break;
+		case "mattack":
+			document.getElementById("mattack").innerHTML = mComp.attack.value + " sec";
+			break;
+		case "mrelease":
+			document.getElementById("mrelease").innerHTML = mComp.release.value + " sec";
+			break;
+		case "hthreshold":
+			document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
+			break;
+		case "hknee":
+			document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
+			break;
+		case "hratio":
+			document.getElementById("hratio").innerHTML = hComp.ratio.value;
+			break;
+		case "hattack":
+			document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
+			break;
+		case "hrelease":
+			document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
+			break;
+	}
+}
