@@ -122,7 +122,12 @@ showReduction = (function() {
 })();
 
 document.getElementById("lowBands").innerHTML = "Low Bands: " + bandSplit[0] + " Hz Cutoff";
-document.getElementById("highBands").innerHTML = "High Bands: " + bandSplit[1] + " Hz Cutoff";  
+document.getElementById("highBands").innerHTML = "High Bands: " + bandSplit[1] + " Hz Cutoff";
+document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
+document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
+document.getElementById("hratio").innerHTML = hComp.ratio.value;
+document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
+document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
 }
 
 // Input
@@ -196,6 +201,4 @@ function playFile(obj) {
     document.getElementById('player').play()
 	});
 	reader.readAsDataURL(obj.files[0]);
-}
-
-document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";  
+}  
