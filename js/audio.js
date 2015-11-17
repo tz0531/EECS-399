@@ -94,10 +94,10 @@ linearInv = function(min, max, value) {
 
 
 compressor = {
-  threshold: [-100, 0],
+  threshold: [-100, -25],
   knee: [0, 40],
   ratio: [1, 20],
-  attack: [0, 1],
+  attack: [0, 0.05],
   release: [0, 1]
 }
 
