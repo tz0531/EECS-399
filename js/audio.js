@@ -123,11 +123,6 @@ showReduction = (function() {
 
 document.getElementById("lowBands").innerHTML = "Low Bands: " + bandSplit[0] + " Hz Cutoff";
 document.getElementById("highBands").innerHTML = "High Bands: " + bandSplit[1] + " Hz Cutoff";
-document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
-document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
-document.getElementById("hratio").innerHTML = hComp.ratio.value;
-document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
-document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
 }
 
 // Input
@@ -202,3 +197,19 @@ function playFile(obj) {
 	});
 	reader.readAsDataURL(obj.files[0]);
 }  
+
+document.getElementById("lthreshold").innerHTML = lComp.threshold.value + " dB";
+document.getElementById("lknee").innerHTML = lComp.knee.value + " dB";
+document.getElementById("lratio").innerHTML = lComp.ratio.value;
+document.getElementById("lattack").innerHTML = lComp.attack.value + " sec";
+document.getElementById("lrelease").innerHTML = lComp.release.value + " sec";
+document.getElementById("mthreshold").innerHTML = mComp.threshold.value + " dB";
+document.getElementById("mknee").innerHTML = mComp.knee.value + " dB";
+document.getElementById("mratio").innerHTML = mComp.ratio.value;
+document.getElementById("mattack").innerHTML = mComp.attack.value + " sec";
+document.getElementById("mrelease").innerHTML = mComp.release.value + " sec";
+document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
+document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
+document.getElementById("hratio").innerHTML = hComp.ratio.value;
+document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
+document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
