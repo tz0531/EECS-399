@@ -198,4 +198,4 @@ function playFile(obj) {
 	reader.readAsDataURL(obj.files[0]);
 }
 
-document.getElementById("lowbands").innerHTML = "Low Bands " + bandSplit[0] + " Hz Cutoff";  
+document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";  
