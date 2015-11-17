@@ -3,7 +3,7 @@ html, body {
   font-family: "Open Sans";
   background: #EEE;
   margin-top: 3%;
-  margin-left: 5%;
+  margin-left: 4%;
 }
 
 a {
@@ -14,9 +14,9 @@ a {
 div.row {
   display: inline;
   float: left;
-  width: 33%;
+  width: 30%;
   margin-bottom: 2%;
-  margin-right: 5%
+  margin-right: 3%
 }
 
 div.player {
