@@ -37,23 +37,23 @@
 <div class="row">
   <h3 id="lowBands"></h3>
   <div class="controls">
-    <label>Threshold</label>
+    <label id="lthreshold">-24 dB</label><label>Threshold</label>
     <input type="range" id="low-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
 </div>
 <div class="controls">
-  <label>Knee</label>
+  <label id="lknee">30.0 dB</label><label>Knee</label>
   <input type="range" id="low-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
 </div>
 <div class="controls">
-  <label>Ratio</label>
+  <label id="lratio">12.0</label><label>Ratio</label>
   <input type="range" id="low-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
 </div>
 <div class="controls">
-  <label>Attack</label>
+  <label id="lattack">0.003 sec</label><label>Attack</label>
   <input type="range" id="low-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
 </div>
 <div class="controls">
-  <label>Release</label>
+  <label id="lrelease">0.250 sec</label><label>Release</label>
   <input type="range" id="low-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
 </div>
 <div class="controls">
@@ -64,23 +64,23 @@
 <div class="row">
   <h3>Medium Bands</h3>
   <div class="controls">
-    <label>Threshold</label>
+    <label id="mthreshold">-24 dB</label><label>Threshold</label>
     <input type="range" id="mid-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label>Knee</label>
+  <label id="mknee">30.0 dB</label><label>Knee</label>
   <input type="range" id="mid-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label>Ratio</label>
+  <label id="mratio">12.0</label><label>Ratio</label>
   <input type="range" id="mid-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label>Attack</label>
+  <label id="mattack">0.003 sec</label><label>Attack</label>
   <input type="range" id="mid-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label>Release</label>
+  <label id="mrelease">0.250 sec</label><label>Release</label>
   <input type="range" id="mid-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
@@ -91,23 +91,23 @@
 <div class="row">
   <h3 id="highBands"></h3>
   <div class="controls">
-    <label id="hthreshold"></label><label>Threshold</label>
+    <label id="hthreshold">-24 dB</label><label>Threshold</label>
     <input type="range" id="high-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label id="hknee"></label><label>Knee</label>
+  <label id="hknee">30.0 dB</label><label>Knee</label>
   <input type="range" id="high-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label id="hratio"></label><label>Ratio</label>
+  <label id="hratio">12.0</label><label>Ratio</label>
   <input type="range" id="high-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label id="hattack"></label><label>Attack</label>
+  <label id="hattack">0.003 sec</label><label>Attack</label>
   <input type="range" id="high-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
-  <label id="hrelease"></label><label>Release</label>
+  <label id="hrelease">0.250 sec</label><label>Release</label>
   <input type="range" id="high-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
