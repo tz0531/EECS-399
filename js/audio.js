@@ -121,6 +121,7 @@ showReduction = (function() {
   window.requestAnimationFrame(arguments.callee);
 })();
 
+document.getElementById("lowbands").innerHTML = "Low Bands " + bandSplit[0] + " Hz Cutoff";
 }
 
 // Input
