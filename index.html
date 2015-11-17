@@ -38,23 +38,23 @@
   <h3 id="lowBands"></h3>
   <div class="controls">
     <label id="lthreshold">-24 dB</label><label>Threshold</label>
-    <input type="range" id="low-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+    <input type="range" id="low-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
   <label id="lknee">30.0 dB</label><label>Knee</label>
-  <input type="range" id="low-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+  <input type="range" id="low-knee" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
   <label id="lratio">12.0</label><label>Ratio</label>
-  <input type="range" id="low-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+  <input type="range" id="low-ratio" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
   <label id="lattack">0.003 sec</label><label>Attack</label>
-  <input type="range" id="low-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+  <input type="range" id="low-attack" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
   <label id="lrelease">0.250 sec</label><label>Release</label>
-  <input type="range" id="low-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>
+  <input type="range" id="low-release" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id); updateValue(this.id);"></input>
 </div>
 <div class="controls">
   <label>Reduction</label>
