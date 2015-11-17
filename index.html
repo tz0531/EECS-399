@@ -35,7 +35,7 @@
   <input type="checkbox" checked onchange="changeBoolean(this.checked , 'drywet');"></input>
 </div>
 <div class="row">
-  <h3>Low Bands</h3>
+  <h3 id="lowBands"></h3>
   <div class="controls">
     <label>Threshold</label>
     <input type="range" id="low-threshold" value="100" step="1" min="0" max="100" oninput="changePercent(this.value, this.id);"></input>

@@ -194,4 +194,6 @@ function playFile(obj) {
     document.getElementById('player').play()
 	});
 	reader.readAsDataURL(obj.files[0]);
-}  
+}
+
+document.getElementById("lowbands").innerHTML = "Low Bands " + bandSplit[0] + " Hz Cutoff";  
