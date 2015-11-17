@@ -210,10 +210,10 @@ function updateValue(id) {
 			document.getElementById("lratio").innerHTML = lComp.ratio.value.toPrecision(3);
 			break;
 		case 'low-attack':
-			document.getElementById("lattack").innerHTML = lComp.attack.value.toPrecision(4) + " sec";
+			document.getElementById("lattack").innerHTML = lComp.attack.value.toPrecision(3) + " sec";
 			break;
 		case 'low-release':
-			document.getElementById("lrelease").innerHTML = lComp.release.value.toPrecision(4) + " sec";
+			document.getElementById("lrelease").innerHTML = lComp.release.value.toPrecision(2) + " sec";
 			break;
 		case 'mid-threshold':
 			document.getElementById("mthreshold").innerHTML = mComp.threshold.value + " dB";
@@ -225,10 +225,10 @@ function updateValue(id) {
 			document.getElementById("mratio").innerHTML = mComp.ratio.value.toPrecision(3);
 			break;
 		case 'mid-attack':
-			document.getElementById("mattack").innerHTML = mComp.attack.value.toPrecision(4) + " sec";
+			document.getElementById("mattack").innerHTML = mComp.attack.value.toPrecision(3) + " sec";
 			break;
 		case 'mid-release':
-			document.getElementById("mrelease").innerHTML = mComp.release.value.toPrecision(4) + " sec";
+			document.getElementById("mrelease").innerHTML = mComp.release.value.toPrecision(2) + " sec";
 			break;
 		case 'high-threshold':
 			document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
@@ -240,10 +240,10 @@ function updateValue(id) {
 			document.getElementById("hratio").innerHTML = hComp.ratio.value.toPrecision(3);
 			break;
 		case 'high-attack':
-			document.getElementById("hattack").innerHTML = hComp.attack.value.toPrecision(4) + " sec";
+			document.getElementById("hattack").innerHTML = hComp.attack.value.toPrecision(3) + " sec";
 			break;
 		case 'high-release':
-			document.getElementById("hrelease").innerHTML = hComp.release.value.toPrecision(4) + " sec";
+			document.getElementById("hrelease").innerHTML = hComp.release.value.toPrecision(2) + " sec";
 			break;
 	}
 }
