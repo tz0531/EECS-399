@@ -200,49 +200,49 @@ function playFile(obj) {
 
 function updateValue(id) {
 	switch(id){
-		case "lthreshold":
+		case 'low-threshold':
 			document.getElementById("lthreshold").innerHTML = lComp.threshold.value + " dB";
 			break;
-		case "lknee":
+		case 'low-knee':
 			document.getElementById("lknee").innerHTML = lComp.knee.value + " dB";
 			break;
-		case "lratio":
+		case 'low-ratio':
 			document.getElementById("lratio").innerHTML = lComp.ratio.value;
 			break;
-		case "lattack":
+		case 'low-attack':
 			document.getElementById("lattack").innerHTML = lComp.attack.value + " sec";
 			break;
-		case "lrelease":
+		case 'low-release':
 			document.getElementById("lrelease").innerHTML = lComp.release.value + " sec";
 			break;
-		case "mthreshold":
+		case 'mid-threshold':
 			document.getElementById("mthreshold").innerHTML = mComp.threshold.value + " dB";
 			break;
-		case "mknee":
+		case 'mid-knee':
 			document.getElementById("mknee").innerHTML = mComp.knee.value + " dB";
 			break;
-		case "mratio":
+		case 'mid-ratio':
 			document.getElementById("mratio").innerHTML = mComp.ratio.value;
 			break;
-		case "mattack":
+		case 'mid-attack':
 			document.getElementById("mattack").innerHTML = mComp.attack.value + " sec";
 			break;
-		case "mrelease":
+		case 'mid-release':
 			document.getElementById("mrelease").innerHTML = mComp.release.value + " sec";
 			break;
-		case "hthreshold":
+		case 'high-threshold':
 			document.getElementById("hthreshold").innerHTML = hComp.threshold.value + " dB";
 			break;
-		case "hknee":
+		case 'high-knee':
 			document.getElementById("hknee").innerHTML = hComp.knee.value + " dB";
 			break;
-		case "hratio":
+		case 'high-ratio':
 			document.getElementById("hratio").innerHTML = hComp.ratio.value;
 			break;
-		case "hattack":
+		case 'high-attack':
 			document.getElementById("hattack").innerHTML = hComp.attack.value + " sec";
 			break;
-		case "hrelease":
+		case 'high-release':
 			document.getElementById("hrelease").innerHTML = hComp.release.value + " sec";
 			break;
 	}
