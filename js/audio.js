@@ -121,7 +121,8 @@ showReduction = (function() {
   window.requestAnimationFrame(arguments.callee);
 })();
 
-document.getElementById("lowbands").innerHTML = "Low Bands " + bandSplit[0] + " Hz Cutoff";
+document.getElementById("lowBands").innerHTML = "Low Bands: " + bandSplit[0] + " Hz Cutoff";
+document.getElementById("highBands").innerHTML = "High Bands: " + bandSplit[1] + " Hz Cutoff";  
 }
 
 // Input
